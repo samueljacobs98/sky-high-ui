@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@300;400;500;600;700&display=swap");
+
+// breakpoints
+$mobile-breakpoint: 320px;
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1024px;
+$large-desktop-breakpoint: 1440px;
+$extra-large-desktop-breakpoint: 2560px;
+
+// fonts
+$font-primary: "Spline Sans Mono", monospace;
+
+// font sizes
+$font-size-default: 1rem;
+$font-size-medium: 1.25rem;
+$font-size-large: 1.5rem;
+
+// colours
+$colour-light-blue: rgb(108, 145, 190);
+$colour-dark-blue: rgb(32, 33, 96);
+$colour-dark-purple: rgb(96, 32, 128);
+
+// margins, paddings, gaps
+$gap: 1rem;
+$padding-body: 2rem;
+
+// misc
+$box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25), 6px 6px 6px rgba(0, 0, 0, 0.25),
+  4px 4px 4px rgba(0, 0, 0, 0.25);

@@ -1,0 +1,11 @@
+@use "./variables" as *;
+
+@mixin panelStyling {
+  width: 100%;
+  max-width: 600px;
+  background-color: $colour-dark-purple;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  min-height: 200px;
+  box-shadow: $box-shadow;
+}
