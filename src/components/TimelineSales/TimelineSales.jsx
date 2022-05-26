@@ -40,7 +40,19 @@ const TimelineSales = ({ data: inputData }) => {
       },
     },
     scales: {
+      x: {
+        title: {
+          display: true,
+          text: "Month",
+          color: "rgb(92,200,176)",
+        },
+      },
       y: {
+        title: {
+          display: true,
+          text: "Number of Sales",
+          color: "rgb(92,200,176)",
+        },
         type: "linear",
         display: true,
         position: "left",
@@ -68,7 +80,7 @@ const TimelineSales = ({ data: inputData }) => {
   };
 
   return (
-    <div className="panel panel--minheight">
+    <div className="panel">
       <Line data={data} options={options} redraw={true} />
     </div>
   );

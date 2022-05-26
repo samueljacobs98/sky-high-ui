@@ -26,6 +26,7 @@ const DiscountSales = ({ data: inputData }) => {
   };
 
   const options = {
+    maintainAspectRatio: false,
     plugins: {
       title: {
         display: true,

@@ -11,6 +11,10 @@
     padding: 0.25rem;
     border-radius: 0.5rem;
     color: $colour-dark-blue;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &-label {

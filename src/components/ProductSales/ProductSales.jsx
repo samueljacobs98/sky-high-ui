@@ -37,6 +37,8 @@ const ProductSales = ({ data: inputData }) => {
   };
 
   const options = {
+    maintainAspectRatio: false,
+
     plugins: {
       title: {
         display: true,
@@ -49,12 +51,22 @@ const ProductSales = ({ data: inputData }) => {
     },
     scales: {
       x: {
+        title: {
+          display: true,
+          text: "Product",
+          color: "rgb(92,200,176)",
+        },
         grid: {
           color: "rgba(255, 255, 255, 0.4)",
           borderColor: "rgba(255, 255, 255, 0.4)",
         },
       },
       y: {
+        title: {
+          display: true,
+          text: "Number of Sales",
+          color: "rgb(92,200,176)",
+        },
         grid: {
           color: "rgba(255, 255, 255, 0.4)",
           borderColor: "rgba(255, 255, 255, 0.4)",
