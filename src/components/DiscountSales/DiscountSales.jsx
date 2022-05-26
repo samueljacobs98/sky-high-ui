@@ -7,12 +7,9 @@ ChartJS.register(...registerables);
 const DiscountSales = ({ data: inputData }) => {
   const [discountData, setDiscountData] = useState([]);
 
-  // Graph Quantity vs Discount or Graph Quantity vs Product Name
   useEffect(() => {
     if (inputData) {
-      // console.log(inputData);
       setDiscountData(squashData(inputData, "Discount", "Quantity"));
-      // console.log(squashData(inputData, "Product Name"));
     }
   }, [inputData]);
 

@@ -43,13 +43,12 @@ export const mapData = (inputData, inputKeys) => {
   });
 };
 
-export const geoKeys = ["Sales", "Profit", "City", "Region", "State"];
-
-export const productSalesKeys = ["Product Name", "Quantity", "Discount"];
-
-export const categoryKeys = ["Category", "Sub-Category", "Quantity"];
-
-export const timelineKeys = ["Order Date", "Quantity", "Discount", "Sales"];
+export const keys = {
+  geoKeys: ["Sales", "Profit", "City", "Region", "State"],
+  productSalesKeys: ["Product Name", "Quantity", "Discount"],
+  categoryKeys: ["Category", "Sub-Category", "Quantity"],
+  timelineKeys: ["Order Date", "Quantity", "Discount", "Sales"],
+};
 
 // const keys = [
 //   "Customer ID",

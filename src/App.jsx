@@ -3,13 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import "./styles/main.scss";
 import GeoSales from "./components/GeoSales/GeoSales";
 import LoaderModal from "./components/LoaderModal/LoaderModal";
-import {
-  mapData,
-  geoKeys,
-  productSalesKeys,
-  categoryKeys,
-  timelineKeys,
-} from "./utils/utils";
+import { keys, mapData } from "./utils/utils";
 import ProductSales from "./components/ProductSales/ProductSales";
 import DiscountSales from "./components/DiscountSales/DiscountSales";
 import CategorySales from "./components/CategorySales/CategorySales";
@@ -37,10 +31,10 @@ const App = () => {
 
   useEffect(() => {
     if (!showLoader) {
-      setGeoData(mapData(dataStore.current, geoKeys));
-      setProductData(mapData(dataStore.current, productSalesKeys));
-      setCategoryData(mapData(dataStore.current, categoryKeys));
-      setTimelineData(mapData(dataStore.current, timelineKeys));
+      setGeoData(mapData(dataStore.current, keys.geoKeys));
+      setProductData(mapData(dataStore.current, keys.productSalesKeys));
+      setCategoryData(mapData(dataStore.current, keys.categoryKeys));
+      setTimelineData(mapData(dataStore.current, keys.timelineKeys));
     }
   }, [showLoader]);
 

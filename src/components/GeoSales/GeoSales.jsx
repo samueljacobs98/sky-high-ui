@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { squashData } from "../../utils/utils";
-import "./GeoSales.scss";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, registerables } from "chart.js";
+import Select from "../Select/Select";
 ChartJS.register(...registerables);
 
 const GeoSales = ({ data: inputData }) => {
@@ -16,7 +16,7 @@ const GeoSales = ({ data: inputData }) => {
       const filteredData = squashData(inputData, filter, "Sales");
       const total = filteredData.reduce((acc, cur) => acc + cur.y, 0);
       setLabelData(filteredData.map((item) => item.x));
-      setSlicesValue(filteredData.map((item) => item.y / total));
+      setSlicesValue(filteredData.map((item) => (100 * item.y) / total));
     }
   }, [inputData, filter]);
 
@@ -56,7 +56,7 @@ const GeoSales = ({ data: inputData }) => {
     plugins: {
       title: {
         display: true,
-        text: `A chart to display the relationship between number of sales sold and ${filter.toLowerCase()}`,
+        text: `A chart to display the relationship between number of sales % and ${filter.toLowerCase()}`,
         color: "rgb(92,200,176)",
       },
       legend: {
@@ -69,11 +69,7 @@ const GeoSales = ({ data: inputData }) => {
     <div className="panel">
       <Pie data={data} options={options} />
       <div className="panel__filter">
-        <label htmlFor="select-filter">Select Filter</label>
-        <select name="select-filter" id="select-filter" onChange={updateFilter}>
-          <option value={filterOptions[0]}>{filterOptions[0]}</option>
-          <option value={filterOptions[1]}>{filterOptions[1]}</option>
-        </select>
+        <Select options={filterOptions} onChange={updateFilter} />
       </div>
     </div>
   );
