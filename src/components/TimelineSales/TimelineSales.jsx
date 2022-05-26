@@ -7,6 +7,7 @@ import {
   borderColor,
   monthLabels as labels,
 } from "../../assets/data/data";
+import "./TimelineSales.scss";
 ChartJS.register(...registerables);
 
 const TimelineSales = ({ data: inputData }) => {
@@ -67,7 +68,7 @@ const TimelineSales = ({ data: inputData }) => {
   };
 
   return (
-    <div className="panel">
+    <div className="panel panel--minheight">
       <Line data={data} options={options} redraw={true} />
     </div>
   );

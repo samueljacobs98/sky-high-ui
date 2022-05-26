@@ -1,11 +1,19 @@
+@use "../../styles/variables" as *;
+
 .select {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 2rem;
 
-  #select-filter {
+  &-filter {
     padding: 0.25rem;
     border-radius: 0.5rem;
+    color: $colour-dark-blue;
+  }
+
+  &-label {
+    color: $colour-light-green;
   }
 }

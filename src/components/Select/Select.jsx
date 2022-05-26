@@ -1,4 +1,5 @@
 import "./Select.scss";
+import { v4 as uuidv4 } from "uuid";
 
 const Select = ({ options, onChange }) => {
   const optionsJSX = options.map((option) => (
@@ -7,10 +8,19 @@ const Select = ({ options, onChange }) => {
     </option>
   ));
 
+  const id = uuidv4();
+
   return (
     <div className="select">
-      <label htmlFor="select-filter">Select Filter</label>
-      <select name="select-filter" id="select-filter" onChange={onChange}>
+      <label className="select-label" htmlFor={`select-filter-${id}`}>
+        Select Filter
+      </label>
+      <select
+        className="select-filter"
+        name="select-filter"
+        id={`select-filter-${id}`}
+        onChange={onChange}
+      >
         {optionsJSX}
       </select>
     </div>
