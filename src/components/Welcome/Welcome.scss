@@ -1,0 +1,18 @@
+@use "../../styles/variables" as *;
+
+.App {
+  .panel--welcome {
+    // background-color:  !;
+    gap: 1.25rem;
+    h1 {
+      color: $colour-light-green;
+      font-weight: bold;
+      font-size: 2rem;
+      margin: 0.5rem;
+    }
+    img {
+      border-radius: 50%;
+      border: 3px solid $colour-light-pink;
+    }
+  }
+}

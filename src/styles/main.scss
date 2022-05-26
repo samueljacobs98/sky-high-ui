@@ -11,9 +11,13 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    align-items: center;
+    // align-items: flex-start;
     gap: $gap;
     min-height: 100vh;
+
+    .column {
+      display: grid;
+    }
 
     .panel {
       @include mixins.panelStyling;

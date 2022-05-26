@@ -1,13 +1,15 @@
 import axios from "axios";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import "./styles/main.scss";
 import GeoSales from "./components/GeoSales/GeoSales";
 import LoaderModal from "./components/LoaderModal/LoaderModal";
-import { keys, mapData } from "./utils/utils";
+import { mapData } from "./utils/utils";
+import { keys } from "./assets/data/data";
 import ProductSales from "./components/ProductSales/ProductSales";
 import DiscountSales from "./components/DiscountSales/DiscountSales";
 import CategorySales from "./components/CategorySales/CategorySales";
 import TimelineSales from "./components/TimelineSales/TimelineSales";
+import Welcome from "./components/Welcome/Welcome";
 
 const App = () => {
   const dataStore = useRef();
@@ -16,6 +18,7 @@ const App = () => {
   const [productData, setProductData] = useState([]);
   const [categoryData, setCategoryData] = useState([]);
   const [timelineData, setTimelineData] = useState([]);
+  const [userData, setUserData] = useState({ name: "User" });
 
   const postRequest = async (url) => {
     try {
@@ -44,17 +47,36 @@ const App = () => {
     postRequest(url);
   }, []);
 
+  const getRequest = useCallback(async (url) => {
+    try {
+      const response = await axios.get(url);
+      const newUser = response.data.results[0];
+      const userObject = {
+        name: newUser.name,
+        image: newUser.picture.large,
+      };
+      setUserData(userObject);
+    } catch (error) {
+      console.error(error);
+    }
+  }, []);
+
+  useEffect(() => {
+    getRequest("https://randomuser.me/api/");
+  }, [getRequest]);
+
   return (
     <div className="App">
       {showLoader ? (
         <LoaderModal />
       ) : (
         <>
+          <Welcome userData={userData} />
           <DiscountSales data={productData} />
-          <GeoSales data={geoData} />
           <ProductSales data={productData} />
           <CategorySales data={categoryData} />
           <TimelineSales data={timelineData} />
+          <GeoSales data={geoData} />
         </>
       )}
     </div>

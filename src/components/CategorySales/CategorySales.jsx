@@ -1,5 +1,6 @@
 import Select from "../Select/Select";
 import { squashData, getValues } from "../../utils/utils";
+import { backgroundColor, borderColor } from "../../assets/data/data";
 import { useState, useEffect, useRef } from "react";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, registerables } from "chart.js";
@@ -49,22 +50,8 @@ const CategorySales = ({ data: inputData }) => {
     datasets: [
       {
         data: slicesValue,
-        backgroundColor: [
-          "rgba(214, 92, 115, 0.2)",
-          "rgba(77, 181, 225, 0.2)",
-          "rgba(255, 227, 192, 0.2)",
-          "rgba(105, 209, 199, 0.2)",
-          "rgba(109, 54, 202, 0.2)",
-          "rgba(250, 194, 154, 0.2)",
-        ],
-        borderColor: [
-          "rgba(214, 92, 115, 1)",
-          "rgba(77, 181, 225, 1)",
-          "rgba(255, 227, 192, 1)",
-          "rgba(105, 209, 199, 1)",
-          "rgba(109, 54, 202, 1)",
-          "rgba(250, 194, 154, 1)",
-        ],
+        backgroundColor,
+        borderColor,
         hoverOffset: 4,
         hoverBackgroundColor: "rgba(125, 187, 115, 0.2)",
       },

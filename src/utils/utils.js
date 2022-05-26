@@ -1,18 +1,10 @@
-// export const uniqueDataSort = (inputData, key, cb) => {
-//   const dataWithCopies = inputData.map((d) => d[key]);
-//   const data = [...new Set(dataWithCopies)].sort(cb);
-//   return data;
-// };
-
-// export const dataSort = (inputData, key, cb) => {
-//   return inputData.map((d) => d[key]).sort(cb);
-// };
-
-// export const convertDate = (date) => {
-//   const components = date.split("/");
-//   // year, month, date
-//   return new Date(components[2], components[0] - 1, components[1]);
-// };
+export const getYears = (data) => {
+  const yearsWithDuplicates = [];
+  data.forEach((item) =>
+    yearsWithDuplicates.push(item["Order Date"].split("/").pop())
+  );
+  return [...new Set(yearsWithDuplicates)].sort((a, b) => b - a);
+};
 
 export const getValues = (data, key) => {
   const newData = data.map((item) => item[key]);
@@ -43,29 +35,23 @@ export const mapData = (inputData, inputKeys) => {
   });
 };
 
-export const keys = {
-  geoKeys: ["Sales", "Profit", "City", "Region", "State"],
-  productSalesKeys: ["Product Name", "Quantity", "Discount"],
-  categoryKeys: ["Category", "Sub-Category", "Quantity"],
-  timelineKeys: ["Order Date", "Quantity", "Discount", "Sales"],
+export const getYearlyData = (data, years) => {
+  const unfilteredData = squashData(data, "Order Date", "Quantity");
+  const groupedData = years.map((year) => {
+    const filteredData = unfilteredData.filter((item) => {
+      const dateArr = item.x.split("/");
+      return dateArr[dateArr.length - 1] === year;
+    });
+    const monthGroupedData = [];
+    for (let i = 0; i < 12; i++) {
+      monthGroupedData[i] = filteredData.filter((item) => {
+        return Number(item.x.split("/")[0]) === i + 1;
+      });
+    }
+    const newData = monthGroupedData
+      .map((month) => month.reduce((acc, cur) => acc + cur.y, 0))
+      .filter((val) => val !== 0);
+    return { year, data: newData };
+  });
+  return groupedData;
 };
-
-// const keys = [
-//   "Customer ID",
-//   "Customer Name",
-//   "Order Date",
-//   "Discount",
-//   "Quantity",
-//   "Ship Mode",
-//   "Product Name",
-//   "Profit",
-//   "Category",
-//   "Sub-Category",
-//   "Sales",
-//   "Country",
-//   "City",
-//   "Region",
-//   "State",
-// ];
-
-// const sort = [(a, b) => a - b, (a, b) => b - a];
