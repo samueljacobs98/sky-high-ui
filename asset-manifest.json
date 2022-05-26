@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/sky-high-ui/static/css/main.6f8f3b96.css",
+    "main.js": "/sky-high-ui/static/js/main.9727f494.js",
+    "static/media/loader.gif": "/sky-high-ui/static/media/loader.45e0b20fa45c24332d1b.gif",
+    "index.html": "/sky-high-ui/index.html",
+    "main.6f8f3b96.css.map": "/sky-high-ui/static/css/main.6f8f3b96.css.map",
+    "main.9727f494.js.map": "/sky-high-ui/static/js/main.9727f494.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6f8f3b96.css",
+    "static/js/main.9727f494.js"
+  ]
+}
