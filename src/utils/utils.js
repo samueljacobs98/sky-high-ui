@@ -14,7 +14,7 @@
 //   return new Date(components[2], components[0] - 1, components[1]);
 // };
 
-const getValues = (data, key) => {
+export const getValues = (data, key) => {
   const newData = data.map((item) => item[key]);
   return [...new Set(newData)];
 };

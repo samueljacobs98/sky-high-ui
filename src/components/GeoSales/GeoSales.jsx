@@ -28,7 +28,6 @@ const GeoSales = ({ data: inputData }) => {
     labels: labelData,
     datasets: [
       {
-        label: "A doughnut Chart",
         data: slicesValue,
         backgroundColor: [
           "rgba(214, 92, 115, 0.2)",
@@ -68,9 +67,7 @@ const GeoSales = ({ data: inputData }) => {
   return (
     <div className="panel">
       <Pie data={data} options={options} />
-      <div className="panel__filter">
-        <Select options={filterOptions} onChange={updateFilter} />
-      </div>
+      <Select options={filterOptions} onChange={updateFilter} />
     </div>
   );
 };

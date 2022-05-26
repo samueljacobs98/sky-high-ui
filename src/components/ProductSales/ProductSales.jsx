@@ -8,15 +8,14 @@ ChartJS.register(...registerables);
 const ProductSales = ({ data: inputData }) => {
   const [sortedData, setSortedData] = useState([]);
   const [sortDataAscending, setSortDataAscending] = useState(false);
-  // console.log(inputData);
-  // 0: Product Name, 1: Quantity, 2: Discount
+
+  const selectOptions = [
+    "Top 10 Selling Products",
+    "Lowest 10 Selling Products",
+  ];
 
   useEffect(() => {
-    const sortMethods = [
-      (a, b) => a.y - b.y,
-      (a, b) => b.y - a.y,
-      // (a, b) => a.x.toUpperCase().localeCompare(b.x.toUpperCase()),
-    ];
+    const sortMethods = [(a, b) => a.y - b.y, (a, b) => b.y - a.y];
     if (inputData) {
       setSortedData(
         squashData(inputData, "Product Name", "Quantity")
@@ -41,7 +40,7 @@ const ProductSales = ({ data: inputData }) => {
     plugins: {
       title: {
         display: true,
-        text: `Top 10 selling products`,
+        text: `${sortDataAscending ? selectOptions[1] : selectOptions[0]}`,
         color: "rgb(92,200,176)",
       },
       legend: {
@@ -63,8 +62,6 @@ const ProductSales = ({ data: inputData }) => {
       },
     },
   };
-
-  const selectOptions = ["Top 10 Products", "Bottom 10 Products"];
 
   const onChange = (e) => {
     switch (e.target.value) {
