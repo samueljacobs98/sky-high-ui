@@ -1,6 +1,7 @@
 @use "./variables" as *;
 @use "./reset" as *;
 @use "./typography" as *;
+@use "./animations";
 @use "./mixins";
 
 body {
@@ -15,7 +16,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    // align-items: flex-start;
     gap: $gap;
     min-height: 100vh;
 

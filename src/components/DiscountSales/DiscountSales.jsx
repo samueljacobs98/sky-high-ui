@@ -48,6 +48,9 @@ const DiscountSales = ({ data: inputData }) => {
           color: "rgba(255, 255, 255, 0.4)",
           borderColor: "rgba(255, 255, 255, 0.4)",
         },
+        ticks: {
+          color: "rgb(200,140,140)",
+        },
         beginAtZero: true,
       },
       y: {
@@ -59,6 +62,9 @@ const DiscountSales = ({ data: inputData }) => {
         grid: {
           color: "rgba(255, 255, 255, 0.4)",
           borderColor: "rgba(255, 255, 255, 0.4)",
+        },
+        ticks: {
+          color: "rgb(200,140,140)",
         },
       },
     },

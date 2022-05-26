@@ -2,7 +2,6 @@
 
 .App {
   .panel--welcome {
-    // background-color:  !;
     gap: 1.25rem;
     h1 {
       color: $colour-light-green;
@@ -13,6 +12,8 @@
     img {
       border-radius: 50%;
       border: 3px solid $colour-light-pink;
+
+      animation: growIn 2s ease-in-out;
     }
   }
 }

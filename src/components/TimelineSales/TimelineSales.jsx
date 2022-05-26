@@ -7,7 +7,6 @@ import {
   borderColor,
   monthLabels as labels,
 } from "../../assets/data/data";
-import "./TimelineSales.scss";
 ChartJS.register(...registerables);
 
 const TimelineSales = ({ data: inputData }) => {
@@ -46,6 +45,9 @@ const TimelineSales = ({ data: inputData }) => {
           text: "Month",
           color: "rgb(92,200,176)",
         },
+        ticks: {
+          color: "rgb(200,140,140)",
+        },
       },
       y: {
         title: {
@@ -59,6 +61,9 @@ const TimelineSales = ({ data: inputData }) => {
         grid: {
           color: "rgba(255, 255, 255, 0.4)",
           borderColor: "rgba(255, 255, 255, 0.4)",
+        },
+        ticks: {
+          color: "rgb(200,140,140)",
         },
       },
     },
