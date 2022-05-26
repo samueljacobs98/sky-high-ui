@@ -8,4 +8,8 @@
   border-radius: 0.5rem;
   min-height: 200px;
   box-shadow: $box-shadow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

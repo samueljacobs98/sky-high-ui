@@ -23,8 +23,6 @@ const App = () => {
   const [categoryData, setCategoryData] = useState([]);
   const [timelineData, setTimelineData] = useState([]);
 
-  // console.log(productData);
-
   const postRequest = async (url) => {
     try {
       const response = await axios.post(url, {

@@ -19,7 +19,7 @@ const getValues = (data, key) => {
   return [...new Set(newData)];
 };
 
-export const squashData = (data, key) => {
+export const squashData = (data, key, filter) => {
   const values = getValues(data, key);
   const groupedData = values.map((value) =>
     data.filter((item) => item[key] === value)
@@ -27,7 +27,7 @@ export const squashData = (data, key) => {
   return groupedData
     .map((group) => {
       const totalQuantity = group.reduce(
-        (acc, cur) => acc + Number(cur["Quantity"]),
+        (acc, cur) => acc + Number(cur[filter]),
         0
       );
       return { x: group[0][key], y: totalQuantity };

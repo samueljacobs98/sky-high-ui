@@ -5,17 +5,13 @@ import { Chart as ChartJS, registerables } from "chart.js";
 ChartJS.register(...registerables);
 
 const DiscountSales = ({ data: inputData }) => {
-  // const [displayDiscount] = useState(true);
-  const [productData, setProductData] = useState([]);
   const [discountData, setDiscountData] = useState([]);
-  // const [data, setData] = useState([]);
 
   // Graph Quantity vs Discount or Graph Quantity vs Product Name
   useEffect(() => {
     if (inputData) {
       // console.log(inputData);
-      setProductData(squashData(inputData, "Product Name", 0));
-      setDiscountData(squashData(inputData, "Discount", 2));
+      setDiscountData(squashData(inputData, "Discount", "Quantity"));
       // console.log(squashData(inputData, "Product Name"));
     }
   }, [inputData]);
@@ -72,7 +68,7 @@ const DiscountSales = ({ data: inputData }) => {
 
   return (
     <div className="panel">
-      <Scatter data={data} options={options} redraw={true} />
+      <Scatter data={data} options={options} />
     </div>
   );
 };
