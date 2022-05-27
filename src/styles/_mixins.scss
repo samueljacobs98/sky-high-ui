@@ -17,4 +17,11 @@
 
   background-color: $colour-dark-purple;
   box-shadow: $box-shadow;
+  transition: 2s;
+
+  &:hover {
+    animation: panelGrow 2s ease-in-out;
+    transform: scale(1.025);
+    background-color: $colour-darker-purple;
+  }
 }
