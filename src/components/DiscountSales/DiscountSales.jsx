@@ -9,7 +9,12 @@ const DiscountSales = ({ data: inputData }) => {
 
   useEffect(() => {
     if (inputData) {
-      setDiscountData(squashData(inputData, "Discount", "Quantity"));
+      const squashedData = squashData(inputData, "Discount", "Quantity");
+      const scaledData = squashedData.map((item) => {
+        item.x = item.x * 100;
+        return item;
+      });
+      setDiscountData(scaledData);
     }
   }, [inputData]);
 
@@ -30,7 +35,7 @@ const DiscountSales = ({ data: inputData }) => {
     plugins: {
       title: {
         display: true,
-        text: "A chart to display the relationship between units sold and discount applied",
+        text: "Relationship between units sold and discount applied",
         color: "rgb(92,200,176)",
       },
       legend: {
@@ -41,7 +46,7 @@ const DiscountSales = ({ data: inputData }) => {
       x: {
         title: {
           display: true,
-          text: "Discount",
+          text: "Discount (%)",
           color: "rgb(92,200,176)",
         },
         grid: {
@@ -49,14 +54,14 @@ const DiscountSales = ({ data: inputData }) => {
           borderColor: "rgba(255, 255, 255, 0.4)",
         },
         ticks: {
-          color: "rgb(200,140,140)",
+          color: "rgb(200, 169, 92)",
         },
         beginAtZero: true,
       },
       y: {
         title: {
           display: true,
-          text: "Quantity",
+          text: "Number of Units Sold",
           color: "rgb(92,200,176)",
         },
         grid: {

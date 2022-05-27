@@ -9,7 +9,7 @@ ChartJS.register(...registerables);
 const CategorySales = ({ data: inputData }) => {
   const filterOptions = ["Category", "Sub-Category"];
   const [filter, setFilter] = useState(filterOptions[0]);
-  const [subFilter, setSubFilter] = useState("None");
+  const [subFilter, setSubFilter] = useState("All");
   const [labelData, setLabelData] = useState([]);
   const [slicesValue, setSlicesValue] = useState([]);
   const categories = useRef([]);
@@ -18,7 +18,7 @@ const CategorySales = ({ data: inputData }) => {
     if (inputData) {
       let unfilteredData = [...inputData];
 
-      if (subFilter !== "None" && filter === "Sub-Category") {
+      if (subFilter !== "All" && filter === "Sub-Category") {
         unfilteredData = unfilteredData.filter(
           (item) => item["Category"] === subFilter
         );
@@ -61,7 +61,7 @@ const CategorySales = ({ data: inputData }) => {
     plugins: {
       title: {
         display: true,
-        text: `A chart to display the relationship between sales % and ${filter.toLowerCase()}`,
+        text: `Relationship between sales % and ${filter.toLowerCase()}`,
         color: "rgb(92,200,176)",
       },
       legend: {
@@ -76,7 +76,7 @@ const CategorySales = ({ data: inputData }) => {
       <Select options={filterOptions} onChange={updateFilter} />
       {filter === "Sub-Category" && (
         <Select
-          options={["None", ...categories.current]}
+          options={["All", ...categories.current]}
           onChange={updateSubFilter}
         />
       )}

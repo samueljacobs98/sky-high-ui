@@ -55,7 +55,7 @@ const GeoSales = ({ data: inputData }) => {
     plugins: {
       title: {
         display: true,
-        text: `A chart to display the relationship between number of sales % and ${filter.toLowerCase()}`,
+        text: `Relationship between number of sales % and ${filter.toLowerCase()}`,
         color: "rgb(92,200,176)",
       },
       legend: {

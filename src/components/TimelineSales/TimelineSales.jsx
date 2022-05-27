@@ -34,7 +34,7 @@ const TimelineSales = ({ data: inputData }) => {
     plugins: {
       title: {
         display: true,
-        text: `A chart to display the relationship between calender month and number of sales`,
+        text: `Relationship between calender month and number of sales`,
         color: "rgb(92,200,176)",
       },
     },
@@ -46,7 +46,7 @@ const TimelineSales = ({ data: inputData }) => {
           color: "rgb(92,200,176)",
         },
         ticks: {
-          color: "rgb(200,140,140)",
+          color: "rgb(200, 169, 92)",
         },
       },
       y: {
@@ -63,7 +63,7 @@ const TimelineSales = ({ data: inputData }) => {
           borderColor: "rgba(255, 255, 255, 0.4)",
         },
         ticks: {
-          color: "rgb(200,140,140)",
+          color: "rgb(200, 169, 92)",
         },
       },
     },

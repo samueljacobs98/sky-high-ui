@@ -53,7 +53,7 @@ const ProductSales = ({ data: inputData }) => {
       x: {
         title: {
           display: true,
-          text: "Product",
+          text: "Product Name",
           color: "rgb(92,200,176)",
         },
         grid: {
@@ -61,7 +61,7 @@ const ProductSales = ({ data: inputData }) => {
           borderColor: "rgba(255, 255, 255, 0.4)",
         },
         ticks: {
-          color: "rgb(200,140,140)",
+          color: "rgb(200, 169, 92)",
         },
       },
       y: {
@@ -75,7 +75,7 @@ const ProductSales = ({ data: inputData }) => {
           borderColor: "rgba(255, 255, 255, 0.4)",
         },
         ticks: {
-          color: "rgb(200,140,140)",
+          color: "rgb(200, 169, 92)",
         },
       },
     },
