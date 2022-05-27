@@ -3,7 +3,7 @@
 <figure style="width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column">
 <img style="width: 100%; max-width: 600px" src="./src/assets/images/readme.png">
 <figcaption>
-_A screenshot of the live site._
+A screenshot of the live site.
 </figcaption>
 </figure>
 
