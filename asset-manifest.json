@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/sky-high-ui/static/css/main.ad7cd5d9.css",
-    "main.js": "/sky-high-ui/static/js/main.483da2c1.js",
+    "main.css": "/sky-high-ui/static/css/main.f0f08ced.css",
+    "main.js": "/sky-high-ui/static/js/main.5002d9c0.js",
     "static/media/loader.gif": "/sky-high-ui/static/media/loader.45e0b20fa45c24332d1b.gif",
     "index.html": "/sky-high-ui/index.html",
-    "main.ad7cd5d9.css.map": "/sky-high-ui/static/css/main.ad7cd5d9.css.map",
-    "main.483da2c1.js.map": "/sky-high-ui/static/js/main.483da2c1.js.map"
+    "main.f0f08ced.css.map": "/sky-high-ui/static/css/main.f0f08ced.css.map",
+    "main.5002d9c0.js.map": "/sky-high-ui/static/js/main.5002d9c0.js.map"
   },
   "entrypoints": [
-    "static/css/main.ad7cd5d9.css",
-    "static/js/main.483da2c1.js"
+    "static/css/main.f0f08ced.css",
+    "static/js/main.5002d9c0.js"
   ]
 }
