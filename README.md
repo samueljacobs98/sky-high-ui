@@ -37,6 +37,10 @@ Lighthouse was used to assess the accessibility and SEO of the site. Based on th
 
 ESLint was used to ensure any unused imports, missing dependencies, etc. were removed/added as required in order to prevent bugs occuring.
 
+### Potential For Future
+
+Chart.js was a fast way to present the data with ease based on the time constraint of the project. However, if the application was to be redesigned I would like to learn and use D3 as it offers greater controller for the user.
+
 ## Links
 
 ### Deployed Site

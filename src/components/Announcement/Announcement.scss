@@ -1,0 +1,34 @@
+@use "../../styles/variables" as *;
+
+.announcement {
+  position: fixed;
+  z-index: 9999;
+  bottom: 0;
+  right: 0;
+  margin: 1rem;
+  margin-right: 2rem;
+  padding: 1rem;
+  background-color: $colour-dark-blue;
+  color: $colour-light-green;
+  border-radius: 1rem;
+  border: 2px solid $colour-light-green;
+  box-shadow: $box-shadow;
+  font-weight: 600;
+  animation: slideInFromRight 1s ease-out;
+
+  &--close {
+    display: none;
+  }
+
+  &__close {
+    position: absolute;
+    height: 1.75rem;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

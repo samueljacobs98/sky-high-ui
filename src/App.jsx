@@ -10,6 +10,7 @@ import DiscountSales from "./components/DiscountSales/DiscountSales";
 import CategorySales from "./components/CategorySales/CategorySales";
 import TimelineSales from "./components/TimelineSales/TimelineSales";
 import Welcome from "./components/Welcome/Welcome";
+import Announcement from "./components/Announcement/Announcement";
 
 const App = () => {
   const dataStore = useRef();
@@ -77,6 +78,7 @@ const App = () => {
           <CategorySales data={categoryData} />
           <TimelineSales data={timelineData} />
           <GeoSales data={geoData} />
+          <Announcement />
         </>
       )}
     </div>
